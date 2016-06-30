@@ -1,0 +1,13 @@
+Function StripAccentt(thestring As String)
+Dim A As String * 1
+Dim B As String * 1
+Dim i As Integer
+Const AccChars = "ŠšŸÀÁÂÃÄÅÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖÙÚÛÜİàáâãäåçèéêëìíîïğñòóôõöùúûüıÿ"
+Const RegChars = "SZszYAAAAAACEEEEIIIIDNOOOOOUUUUYaaaaaaceeeeiiiidnooooouuuuyy"
+For i = 1 To Len(AccChars)
+A = Mid(AccChars, i, 1)
+B = Mid(RegChars, i, 1)
+thestring = replace(thestring, A, B)
+Next
+StripAccentt = thestring
+End Function
